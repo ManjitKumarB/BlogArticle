@@ -1,0 +1,15 @@
+form {
+
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+body, label, .checkbox label {
+    font-weight: 300;
+}
+
+.select2-container {
+
+    width: 100% !important;
+}
