@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" />
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/margin.css">
+    <link rel="stylesheet" href="/css/awesome-font/css/font-awesome.min.css">
 </head>
 <body>
     
@@ -35,5 +36,6 @@
     </script>
 
     @yield('footer')
+
 </body>
 </html>

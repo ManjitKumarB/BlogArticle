@@ -22,4 +22,7 @@
         </article>
     @endforeach
 
+    <!-- New Article -->
+    @include ('partials.newarticle')
+
 @stop

@@ -13,3 +13,19 @@ body, label, .checkbox label {
 
     width: 100% !important;
 }
+
+.add-article-btn {
+    position: fixed;
+    border-radius: 50%;
+    z-index: 2000;
+    right: 3%;
+    top: 90%;
+}
+
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3000;
+  }

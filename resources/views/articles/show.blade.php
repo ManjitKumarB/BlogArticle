@@ -53,5 +53,8 @@
 
     @endguest
 
+    <!-- New Article -->
+    @include ('partials.newarticle')
+
 
 @stop

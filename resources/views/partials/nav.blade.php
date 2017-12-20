@@ -51,7 +51,7 @@
                   </a>
 
                   <ul class="dropdown-menu" role="menu">
-                      <li><a href="/articles/userArticles">Articles</a></li>
+                      <li><a href="/articles/userArticles">My Articles</a></li>
                       <li><a href="#">Tasks</a></li>
                       <li><a href="#">Settings</a></li>
                       <li>
@@ -73,3 +73,4 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+  <div style="height: 40px;"></div>
