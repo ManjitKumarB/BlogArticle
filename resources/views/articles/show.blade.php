@@ -38,7 +38,7 @@
                             <a class="btn btn-primary" href="{{ route('articles.edit',$article->id) }}">Edit</a>
                         <td>
                         <td>
-                            <form method="POST" action="/articles/{{ $article->id }}">
+                            <form class="delete" method="POST" action="/articles/{{ $article->id }}" onsubmit="return ConfirmDelete()">
                                 <input type="hidden" name="_method" value="DELETE" />
                                 {{ csrf_field() }}
                                 <input type="submit" class="btn btn-danger" value="Delete" />

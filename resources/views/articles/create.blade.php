@@ -11,7 +11,7 @@
     {{ csrf_field() }}
 
         <!-- Temporary -->
-        <input type="hidden" name="user_id" id="user_id" value="1" />
+        <input type="hidden" name="user_id" id="user_id" />
         
         <!-- Title Form Input -->
         <div class="form-group">

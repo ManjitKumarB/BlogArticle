@@ -214,19 +214,9 @@ class ArticlesController extends Controller
     public function destroy($id)
     
         {
-                    //verify owner
-            if (\Auth::user()->id == $article->user_id) {
-                
-                Article::find($id)->delete();
-                flash()->overlay('Article deleted successfully!', 'success');
-                return redirect('articles');
-                        
-            } else {
-                
-                flash()->error( "You have no rights to access this link", "unauthorized access!");
-                return redirect("articles");
-            }
-
+            Article::find($id)->delete();
+            flash()->overlay('Article deleted successfully!', 'success');
+            return redirect('articles');
         
         }
 
