@@ -27,3 +27,22 @@ body, label, .checkbox label {
     top: 0;
     width: 100%;
   }
+
+  h2.mce-content-body {
+    font-size: 200%;
+    padding: 0 25px 0 25px;
+    margin: 10px 0 10px 0;
+  }
+  
+  body {
+    background: transparent;  
+  }
+  
+  .content {
+    overflow: visible;
+    position: relative;
+    width: auto;
+    margin-left: 0;
+    min-height: auto;
+    padding: inherit;
+  }

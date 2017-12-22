@@ -6,7 +6,7 @@
 
     <hr/>
 
-    <form method="POST" action="/articles">
+    <form id="add_article" name="add_article" method="POST" action="/articles">
 
     {{ csrf_field() }}
 
@@ -39,7 +39,7 @@
                     <option value="{{$tag->id}}">{{$tag->name}}</option>
                 @endforeach
             </select>
-        </div>        
+        </div>
 
         <!-- Add Article Form Input -->
         <div class="form-group">
@@ -47,6 +47,8 @@
         </div>
 
     </form>
+
+    
 
     @include ('errors.list')
 

@@ -17,7 +17,18 @@
             </h2>
 
 
-            <div class="body">{{ $article->body }}</div>
+            @if ( strlen("strip_tags($article->body)") < 100 )
+
+                <div class="body">{!! $article->body !!}</div>
+
+            @else
+                <div class="body">
+                <?php echo substr(strip_tags($article->body), 0, 100) ?><strong>...</strong>&nbsp;
+                <a href="{{ url('/articles', $article->id) }}">Read more</a>
+                </div>
+
+            @endif
+            
         
         </article>
     @endforeach
