@@ -1,6 +1,11 @@
 @extends('app')
+@section('breadcrumbs')
+<li class="active">Dashboard</li>
+@endsection
 
 @section('content')
+<div class="row">
+</div>
 <div class="container" style="margin-top: 50px;">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

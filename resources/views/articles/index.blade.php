@@ -1,5 +1,7 @@
 @extends('app')
-
+@section('breadcrumbs')
+        <li class="active">Articles List</li>
+@endsection
 
 @section('content')
 

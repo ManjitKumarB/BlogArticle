@@ -17,16 +17,13 @@ use App\Article;
 
 
 Route::get('/', 'WelcomeController@index');
-
 Route::get('about', 'PagesController@about');
-
 Route::get('contact', 'PagesController@contact');
 Route::get('login', 'LoginController@home');
 
 Route::get('articles/userArticles', 'ArticlesController@userArticles');
 
-Route::get('articles/search', 'ArticlesController@search');
-
+Route::post('search', 'ArticlesController@search');
 // Route::get('articles', 'ArticlesController@index');
 // Route::get('articles/create', 'ArticlesController@create');
 // Route::post('articles/store', 'ArticlesController@store');
@@ -44,26 +41,6 @@ Route::controllers([
 ]);
 */
 
-/*
-Route::get('about', function () {
-    return view("pages.contact");
-});
-*/
+
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-Route::post ( '/search', function () {
-	$findArticle = Input::get ( 'findArticle' );
-	$articles = Article::where ( 'title', 'LIKE', '%' . $findArticle . '%' )->orWhere ( 'body', 'LIKE', '%' . $findArticle . '%' )->get ();
-	//Verify articles from User
-    if (isset($articles[0])) {
-        return view('articles.index' , compact('articles'));
-
-    } else {
-        return view ( 'welcome' )->withMessage ( 'No Details found. Try to search again !' );
-    }
-		
-} );

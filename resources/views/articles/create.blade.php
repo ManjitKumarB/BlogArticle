@@ -1,5 +1,10 @@
 @extends('app')
 
+@section('breadcrumbs')
+        <li><a href="/articles">Articles</a></li>
+        <li class="active">New Article</li>
+@endsection
+
 @section('content')
 
     <h1>Write a New Article</h1>

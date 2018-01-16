@@ -1,5 +1,8 @@
 @extends('app')
-
+@section('breadcrumbs')
+        <li><a href="/articles">Articles</a></li>
+        <li class="active">{{ $article->title }}</li>
+@endsection
 
 @section('content')
 

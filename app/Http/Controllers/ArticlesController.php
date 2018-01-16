@@ -6,7 +6,6 @@ use App\Article;
 use App\Tag;
 use App\Http\Requests;
 use App\Http\Requests\ArticleRequest;
-
 use Illuminate\Foundation\Validation;
 use Illuminate\Http\Request;
 
@@ -220,22 +219,25 @@ class ArticlesController extends Controller
         
         }
 
-
-    /* 
-    public function search($serachVal)
-    {
-
-        $articles = Article::latest('published_at')->where('user_id', '=', $user_id)->get();
+    /**
+     * Search article for requested text
+     * 
+     * @param ArticleRequest $request
+     * @return Response
+    */
+    public function search(){
+        
+        $findArticle = $_POST['findArticle'];
+        $articles = Article::where ( 'title', 'LIKE', '%' . $findArticle . '%' )->orWhere ( 'body', 'LIKE', '%' . $findArticle . '%' )->get ();
 
         //Verify articles from User
         if (isset($articles[0])) {
             return view('articles.index' , compact('articles'));
 
         } else {
-            return "no articles to show";
+            return view ( 'welcome' )->withMessage ( 'No Details found. Try to search again !' );
         }
-        
-    } */
+    }
 
 
 }

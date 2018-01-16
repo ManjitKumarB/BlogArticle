@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/home">Blog</a>
+        <a class="navbar-brand" href="/">Blog</a>
       </div>
   
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,7 +22,7 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <form action="/search" method="POST" class="navbar-form">
+            <form action="{{url('search')}}" method="POST" class="navbar-form">
               {{ csrf_field() }}
               <div class="form-group">
                 <input type="text" name="findArticle" class="form-control" placeholder="Search">
@@ -73,4 +73,5 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+
   <div style="height: 40px;"></div>

@@ -15,7 +15,14 @@
 
     <!-- NAVIGATION BAR -->
     @include ('partials.nav')
-
+    <div style="height: 15px;"></div>
+    <div>
+        <ul class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            @yield('breadcrumbs')
+        </ul>
+    </div>
+    
     <div class="container">
         @include('flash::message') @yield('content')
     </div>

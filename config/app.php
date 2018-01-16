@@ -186,6 +186,12 @@ return [
          */
         Laracasts\Flash\FlashServiceProvider::class,
 
+        /**
+         * Breadcrumbs service provider
+         * 
+         */
+        DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,      
+
     ],
 
     /*
@@ -236,6 +242,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Flash' => Laracasts\Flash\Flash::class,
+
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
 
     ],
 
