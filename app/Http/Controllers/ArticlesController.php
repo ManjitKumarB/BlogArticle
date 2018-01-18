@@ -228,10 +228,20 @@ class ArticlesController extends Controller
     public function search(){
         
         $findArticle = $_POST['findArticle'];
-        $articles = Article::where ( 'title', 'LIKE', '%' . $findArticle . '%' )->orWhere ( 'body', 'LIKE', '%' . $findArticle . '%' )->get ();
+        $articles1 = Tag::where('name', $findArticle)->first()->articles()->get();
+        //$articles = $tagId->articles();
+        //dd($articles);
+        $articles2 = Article::where ( 'title', 'LIKE', '%' . $findArticle . '%' )->orWhere ( 'body', 'LIKE', '%' . $findArticle . '%' )->get ();
+
+        $allArticles = $articles1->merge($articles2);
+        $articles = [];
+
+        foreach($allArticles as $article) {
+            $articles[$article->id] = $article;
+        }        
 
         //Verify articles from User
-        if (isset($articles[0])) {
+        if (count($articles) > 0) {
             return view('articles.index' , compact('articles'));
 
         } else {
