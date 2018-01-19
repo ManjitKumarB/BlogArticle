@@ -7,6 +7,8 @@
 
     <h1>Articles</h1>
 
+    @if(isset($articles) && $articles<>"")
+
     @foreach ($articles as $article)
         <article>
             <h2> 
@@ -35,6 +37,14 @@
         </article>
     @endforeach
 
+    @else
+        <div class="alert alert-danger">
+            <strong>No Records!</strong>&nbsp;&nbsp; No records match for the search text.
+            <a href="/articles" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        </div>
+    @endif
+
+    
     <!-- New Article -->
     @include ('partials.newarticle')
 

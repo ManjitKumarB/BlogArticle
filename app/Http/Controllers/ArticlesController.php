@@ -228,24 +228,37 @@ class ArticlesController extends Controller
     public function search(){
         
         $findArticle = $_POST['findArticle'];
-        $articles1 = Tag::where('name', $findArticle)->first()->articles()->get();
-        //$articles = $tagId->articles();
-        //dd($articles);
+
+        //Serach inside Tags
+        $findTag = Tag::where('name', $findArticle)->first();
+        if (isset($findTag)) {
+            $articles1 = $findTag->articles()->get();
+        }
+        
+        //Search inside Articles
         $articles2 = Article::where ( 'title', 'LIKE', '%' . $findArticle . '%' )->orWhere ( 'body', 'LIKE', '%' . $findArticle . '%' )->get ();
 
-        $allArticles = $articles1->merge($articles2);
-        $articles = [];
+        //Add articles from both search
+        if (isset($articles1)) {
+            $allArticles = $articles1->merge($articles2);
+            
+        } else {
+            $allArticles = $articles2;
 
+        }
+
+        $articles = [];
         foreach($allArticles as $article) {
+
             $articles[$article->id] = $article;
-        }        
+        }       
 
         //Verify articles from User
         if (count($articles) > 0) {
             return view('articles.index' , compact('articles'));
 
         } else {
-            return view ( 'welcome' )->withMessage ( 'No Details found. Try to search again !' );
+            return view('articles.index');
         }
     }
 
