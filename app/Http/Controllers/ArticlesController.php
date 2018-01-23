@@ -55,12 +55,27 @@ class ArticlesController extends Controller
         }
 
 
-    //Add Article        
+    /**
+     * New article
+     * 
+     * @return Response
+     */        
     public function create(){
                 
                 $tags = Tag::all('name', 'id');
                 return view('articles.create', compact('tags'));
         }
+
+    /**
+     * New article modal
+     * 
+     * @return Response
+     */        
+    public function new(){
+                
+        $test = Test::whereSlug($slug)->firstOrFail();
+        return view('tests.show', compact('test'));
+    }
 
 
     /*
@@ -181,6 +196,7 @@ class ArticlesController extends Controller
     {
         $article->tags()->sync($tags);
     }
+
 
 
     /**
